@@ -9,7 +9,14 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../Providers/AuthProviders';
 import { Button } from 'react-bootstrap';
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user,signOutUser } = useContext(AuthContext);
+    const handleLogOut = () => {
+        signOutUser().then(() => {
+           console.log("Sign Out");
+          }).catch((error) => {
+           console.error(error.message);
+          });
+    }
     return (
         <div className='header'
         >
@@ -25,7 +32,9 @@ const Header = () => {
                                 user ?
                                     <div>
                                         {user && <small>{user.name} </small>}
-                                        <Link className='link_style' >LogOut</Link>
+                                        <Link  
+                                        onClick={handleLogOut}
+                                        className='link_style' >LogOut</Link>
                                     </div>
                                     :
                                     <Link className='link_style' to="/login">Login</Link>
