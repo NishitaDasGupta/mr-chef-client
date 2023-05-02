@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import { Link } from "react-router-dom";
 import { AuthContext } from '../../../../Providers/AuthProviders';
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateProfileUser } = useContext(AuthContext);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const handleRegister = event => {
@@ -15,10 +15,21 @@ const Register = () => {
         const photo = event.target.photo.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
+        if (password.length < 6) {
+            setError("Please Enter atleast 6 characters.")
+            setSuccess('');
+            return;
+        }
         console.log(name, photo, email, password);
         createUser(email, password)
             .then((result) => {
                 const registeredUser = result.user;
+                console.log(registeredUser);
+                updateProfileUser(result.user , name)
+                .then(() => {})
+                .catch((error) => {
+                    setError(error.message);
+                });
                 setSuccess('Successfully Registered!');
                 setError('');
                 form.reset();
@@ -26,8 +37,9 @@ const Register = () => {
             .catch((error) => {
                 setError(error.message);
                 setSuccess('');
-               
+
             });
+    
     }
     return (
         <Container className='w-50 mt-4 mb-5' >
@@ -54,10 +66,10 @@ const Register = () => {
                     Register
                 </Button>
                 <Form.Text className='text-danger'>
-                    {error} <br/>
+                    {error} <br />
                 </Form.Text>
                 <Form.Text className='text-success'>
-                    {success} <br/>
+                    {success} <br />
                 </Form.Text>
                 <Form.Text>
                     Already have an account? Please <Link to="/login">Log in</Link>
