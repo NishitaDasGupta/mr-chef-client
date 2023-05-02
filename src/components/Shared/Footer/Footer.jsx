@@ -4,7 +4,7 @@ import logo from '../../../assets/spatula-crossed-with-chef-hat-on-top-free-vect
 import { Col, Container, Row } from 'react-bootstrap';
 const Footer = () => {
     return (
-        <div className='bg-secondary text-white footer'>
+        <div className='bg-dark text-white footer'>
 
             <Container className='mt-2'>
                 <Row >
@@ -45,7 +45,7 @@ const Footer = () => {
 
                 </Row>
                 <hr />
-                <p className='text-center p-2 text-dark'
+                <p className='text-center p-2 text-secondary'
                 ><small>© 2023 <small className='text-white'
                 >Mr Chef</small> ,Llc. All Rights Reserved.</small></p>
             </Container>

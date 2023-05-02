@@ -5,20 +5,32 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from "react-router-dom";
 import logo from '../../../assets/spatula-crossed-with-chef-hat-on-top-free-vector.png'
+import { useContext } from 'react';
+import { AuthContext } from '../../../Providers/AuthProviders';
+import { Button } from 'react-bootstrap';
 const Header = () => {
+    const { user } = useContext(AuthContext);
     return (
         <div className='header'
         >
             <Navbar className='background_color' expand="lg">
                 <Container>
-                    <Navbar.Brand ><img style={{ height: '40px' }} src={logo} />  Mr Chef</Navbar.Brand>
+                    <Navbar.Brand ><img style={{ height: '40px' }} src={logo} />  <span className='text-white'>Mr Chef</span></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <Link className='link_style' to="/">Home</Link>
                             <Link className='link_style' to="/blog">Blog</Link>
-                            <small>User Profile pic</small>
-                            <Link className='link_style' to="/login">Login</Link>
+                            {
+                                user ?
+                                    <div>
+                                        {user && <small>{user.name} </small>}
+                                        <Link className='link_style' >LogOut</Link>
+                                    </div>
+                                    :
+                                    <Link className='link_style' to="/login">Login</Link>
+                            }
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
