@@ -31,7 +31,7 @@ const Header = () => {
                             {
                                 user ?
                                     <div>
-                                        {user && <small>{user.email} </small>}
+                                        {user && <img className='profilePicture rounded-circle' src={user.photoURL} alt="" /> }
                                         <Link  
                                         onClick={handleLogOut}
                                         className='link_style' >LogOut</Link>

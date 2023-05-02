@@ -25,7 +25,7 @@ const Register = () => {
             .then((result) => {
                 const registeredUser = result.user;
                 console.log(registeredUser);
-                updateProfileUser(result.user , name)
+                updateProfileUser(result.user , name,photo)
                 .then(() => {})
                 .catch((error) => {
                     setError(error.message);
