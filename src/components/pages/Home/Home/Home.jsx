@@ -4,8 +4,7 @@ import { Button } from 'react-bootstrap';
 const Home = () => {
     return (
         <div>
-            <h2>Home </h2>
-            <Button variant="primary">Primary</Button>
+            <h2>hey home</h2>
         </div>
     );
 };
