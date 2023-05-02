@@ -3,10 +3,10 @@ import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from "react-router-dom";
-import { FaGoogle,FaGithub } from 'react-icons/fa';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../../../Providers/AuthProviders';
 const Login = () => {
-    const { signInUser } = useContext(AuthContext);
+    const { signInUser, googleSignInUser,githubSignInUser } = useContext(AuthContext);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const handleLogin = event => {
@@ -14,17 +14,42 @@ const Login = () => {
         const form = event.target;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        console.log(email,password);
+        console.log(email, password);
         signInUser(email, password)
-        .then((result) => {
-            const loggedUser = result.user;
-            setSuccess('Successfully Login!')
-            setError('');
-        })
-        .catch((error) => {
-            setError(error.message);
-            setSuccess('');
-        });
+            .then((result) => {
+                const loggedUser = result.user;
+                setSuccess('Successfully Login!')
+                setError('');
+                form.reset();
+            })
+            .catch((error) => {
+                setError(error.message);
+                setSuccess('');
+            });
+    }
+    const handleGoogle = () => {
+        googleSignInUser()
+            .then((result) => {
+                const googleUser = result.user;
+                setSuccess('Successfully Login with Google!')
+                setError('');
+            })
+            .catch((error) => {
+                setError(error.message);
+                setSuccess('');
+            })
+    }
+    const handleGithub = () => {
+        githubSignInUser()
+            .then((result) => {
+                const githubUser = result.user;
+                setSuccess('Successfully Login with Github!')
+                setError('');
+            })
+            .catch((error) => {
+                setError(error.message);
+                setSuccess('');
+            })
     }
     return (
 
@@ -46,17 +71,17 @@ const Login = () => {
                 </Button>
                 <div className='d-flex '
                 >
-                <Button className='w-100 me-3' variant='outline-primary' type="submit">
-                <FaGoogle /> Login with Google
-                </Button>
-                <Button className='w-100' variant='outline-secondary' type="submit"><FaGithub/> Login with GitHub
-                </Button>
+                    <Button className='w-100 me-3' onClick={handleGoogle} variant='outline-primary' type="submit">
+                        <FaGoogle /> Login with Google
+                    </Button>
+                    <Button className='w-100'   onClick={handleGithub} variant='outline-secondary' type="submit"><FaGithub /> Login with GitHub
+                    </Button>
                 </div>
                 <Form.Text className='text-danger'>
-                    {error} <br/>
+                    {error} <br />
                 </Form.Text>
                 <Form.Text className='text-success'>
-                    {success}  <br/>
+                    {success}  <br />
                 </Form.Text>
                 <Form.Text>
                     Dont have an account? <Link to="/register">Register</Link>

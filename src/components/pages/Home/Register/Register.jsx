@@ -21,6 +21,7 @@ const Register = () => {
                 const registeredUser = result.user;
                 setSuccess('Successfully Registered!');
                 setError('');
+                form.reset();
             })
             .catch((error) => {
                 setError(error.message);

@@ -31,7 +31,7 @@ const Header = () => {
                             {
                                 user ?
                                     <div>
-                                        {user && <small>{user.name} </small>}
+                                        {user && <small>{user.email} </small>}
                                         <Link  
                                         onClick={handleLogOut}
                                         className='link_style' >LogOut</Link>
