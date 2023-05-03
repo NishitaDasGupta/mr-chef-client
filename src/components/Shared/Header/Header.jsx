@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import logo from '../../../assets/spatula-crossed-with-chef-hat-on-top-free-vector.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../../Providers/AuthProviders';
-import { NavLink } from 'react-bootstrap';
+
 
 const Header = () => {
     const { user, signOutUser } = useContext(AuthContext);
@@ -28,7 +28,7 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-
+                            
                             <Link className='link_style' to="/">Home</Link>
                             <Link className='link_style' to="/blog">Blog</Link>
                             {
@@ -36,8 +36,7 @@ const Header = () => {
                                     <div>
                                         {user && <img className='profilePicture rounded-circle'
                                             src={user.photoURL} alt={user.displayName}
-                                            title={user.displayName &&
-                                                user.displayName} />}
+                                            title={user.displayName } />}
 
                                         <Link
                                             onClick={handleLogOut}
