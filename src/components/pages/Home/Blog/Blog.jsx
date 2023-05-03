@@ -7,7 +7,8 @@ const Blog = () => {
             <div className='text-center '>
                 <img className='w-50' style={{ height: "150px" }} src={QApicture} alt="" />
             </div>
-            <div>
+            <div className='m-2'
+            >
                 <div className='mt-4'>
                     <h4 >1. Tell the differences between uncontrolled and controlled components.</h4>
                     <p><strong>Ans:</strong> An uncontrolled functional component is a component that maintains its own internal state. More difficult to debug. More complex code. Data flows within the component.
