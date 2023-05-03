@@ -20,7 +20,7 @@ const ChefCard = ({ chef }) => {
           </Card.Text>
         </Card.Body>
         <Card.Footer>
-          <Link><Button className='w-100' 
+          <Link ><Button className='w-100' 
          variant="primary">View Recipes</Button></Link>
         </Card.Footer>
       </Card>
