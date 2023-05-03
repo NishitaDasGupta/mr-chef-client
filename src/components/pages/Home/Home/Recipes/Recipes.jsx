@@ -15,7 +15,10 @@ const Recipes = ({ recipe }) => {
                <div className='d-inline-flex align-items-center'>
                <Rating style={{ maxWidth: 90 }}  value={Math.round(Ratings)} readOnly  />
                <small> {Ratings}</small></div>
-               <p className='align-items-center'><small><BiLike style={{fontSize:'1.5em'}} /> {Likes} Likes</small></p>
+               <div className='d-flex align-items-center'>
+                <div><BiLike style={{fontSize:'1.5em'}} /></div>
+                <div> {Likes} Likes</div>
+                </div>
             </Card.Footer>
         </Card>
     );
