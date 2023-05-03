@@ -28,7 +28,7 @@ const ChefCard = ({ chef }) => {
       </Card.Body>
       <Card.Footer>
         <Link ><Button className='w-100'
-          variant="primary">View Recipes</Button></Link>
+          variant="warning">View Recipes</Button></Link>
       </Card.Footer>
     </Card>
 

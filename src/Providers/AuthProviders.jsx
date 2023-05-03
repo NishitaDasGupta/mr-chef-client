@@ -20,11 +20,13 @@ const AuthProviders = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
-    const updateProfileUser = (userCurrent,name,photo) => {
-        updateProfile(userCurrent, {
+    const updateProfileUser = (userCurrent, name, photo) => {
+        setLoading(true);
+
+        return updateProfile(userCurrent, {
             displayName: name,
-            photoURL : photo
-          })
+            photoURL: photo
+        })
     }
     const signOutUser = () => {
         setLoading(true);
@@ -45,7 +47,7 @@ const AuthProviders = ({ children }) => {
             unsubscribe();
         }
     }, [])
-    const authinfo = { user,loading, createUser, signInUser, signOutUser,googleSignInUser,githubSignInUser,updateProfileUser };
+    const authinfo = { user, loading, createUser, signInUser, signOutUser, googleSignInUser, githubSignInUser, updateProfileUser };
     return (
         <AuthContext.Provider value={authinfo}>
             {children}

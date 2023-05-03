@@ -19,57 +19,72 @@ const Home = () => {
         setShowAll(true);
     }
     return (
-        <div>
+   <div>
+      {/* banner  */}
+      <div className='banner '>
+                <div className='banner-title'><span className='hello'>Hello there!!!</span>
+                     <br /><span className='mrChef'>Mr Chef </span> <span className='hello'
+                     > is here ... </span>
+
+                     <br/>
+                     <Button className='mt-5 text-white' variant="outline-warning">Wanna Know more?</Button>
+                     </div>
+            </div>
+         <Container >
+          
+            {/* Top Recipes */}
+            <h1 className='mt-5 text-lg-center'><span className='text-warning'>Top Recipes</span> of the day... </h1>
+            <p className='text-lg-center'>Sliding recipes are much more tasty as food than sliding images!!</p>
             <CarouselBanner></CarouselBanner>
-            <Container >
-                {/* All Recipes */}
-                <div>
-                    <h1 className='mt-5'>All Recipes</h1>
-                    <p>We tinkered. We tested. We tested again. We tweaked these recipes until they were absolutely perfect — tried-and-true dishes that are sure to stand the test of time. We feel 100% confident in calling them our Bests. Try them, and we bet you will agree. </p>
-                    <div >
-                        {
-                            showAll ?
-                                <div className='chefsdetails'> {
-                                    recipes.map(recipe => <Recipes
-                                        key={recipe.Recipe_ID}
-                                        recipe={recipe}
-                                    ></Recipes>)
-                                }</div>
-                                :
-                                <div className='chefsdetails'> {
-                                    recipes.slice(0, 6).map(recipe => <Recipes
-                                        key={recipe.Recipe_ID}
-                                        recipe={recipe}
-                                    ></Recipes>)
-                                }</div>
-                        }
-                    </div>
-                </div>
-                <div className='text-center my-3'>
+            {/* All Recipes */}
+            <div>
+                <h1 className='mt-5 text-lg-center'>All Recipes</h1>
+                < p className='text-lg-center'>We tinkered. We tested. We tested again. We tweaked these recipes until they were absolutely perfect — tried-and-true dishes that are sure to stand the test of time. We feel 100% confident in calling them our Bests. Try them, and we bet you will agree. </p>
+                <div >
                     {
                         showAll ?
-                        "" :
-                        <Button onClick={handleSeeMore}
-                        variant="primary">See More</Button>
+                            <div className='chefsdetails'> {
+                                recipes.map(recipe => <Recipes
+                                    key={recipe.Recipe_ID}
+                                    recipe={recipe}
+                                ></Recipes>)
+                            }</div>
+                            :
+                            <div className='chefsdetails'> {
+                                recipes.slice(0, 6).map(recipe => <Recipes
+                                    key={recipe.Recipe_ID}
+                                    recipe={recipe}
+                                ></Recipes>)
+                            }</div>
                     }
                 </div>
-                {/* Chef Details */}
-                <div>
-                    <h1 className='mt-5'>Chef Details</h1>
-                    <p>Knowing our chefs is an important step. They provides us best recipes and hlep us to figure out how can a food recipe delicious.</p>
-                    <div className='chefsdetails'>
-                        {
-                            chefsDetails.map(
-                                (chef) => <ChefCard
-                                    key={chef.Chef_ID}
-                                    chef={chef}
-                                ></ChefCard>
-                            )
-                        }
-                    </div>
+            </div>
+            <div className='text-center my-3'>
+                {
+                    showAll ?
+                        "" :
+                        <Button onClick={handleSeeMore}
+                            variant="warning">See More</Button>
+                }
+            </div>
+            {/* Chef Details */}
+            <div>
+                <h1 className='mt-5 text-lg-center'>Chef Details</h1>
+                <p className='text-lg-center'>Knowing our chefs is an important step. They provides us best recipes and hlep us to figure out how can a food recipe delicious.</p>
+                <div className='chefsdetails'>
+                    {
+                        chefsDetails.map(
+                            (chef) => <ChefCard
+                                key={chef.Chef_ID}
+                                chef={chef}
+                            ></ChefCard>
+                        )
+                    }
                 </div>
-            </Container >
-        </div>
+            </div>
+        </Container >
+
+   </div>
     );
 };
 

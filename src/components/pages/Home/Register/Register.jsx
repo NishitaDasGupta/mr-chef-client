@@ -25,13 +25,14 @@ const Register = () => {
             .then((result) => {
                 const registeredUser = result.user;
                 console.log(registeredUser);
-                updateProfileUser(result.user , name,photo)
-                .then(() => {})
-                .catch((error) => {
-                    setError(error.message);
-                });
+
                 setSuccess('Successfully Registered!');
                 setError('');
+                updateProfileUser(result.user, name, photo)
+                    .then(() => { })
+                    .catch((error) => {
+                        setError(error.message);
+                    })
                 form.reset();
             })
             .catch((error) => {
@@ -39,7 +40,7 @@ const Register = () => {
                 setSuccess('');
 
             });
-    
+
     }
     return (
         <Container className='w-50 mt-4 mb-5' >
@@ -62,7 +63,7 @@ const Register = () => {
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
 
-                <Button className='w-100 background_color' type="submit">
+                <Button className='w-100' variant='secondary' type="submit">
                     Register
                 </Button>
                 <Form.Text className='text-danger'>

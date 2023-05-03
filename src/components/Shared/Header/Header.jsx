@@ -22,15 +22,15 @@ const Header = () => {
     return (
         <div className='header'
         >
-            <Navbar className='background_color' expand="lg">
+            <Navbar bg='warning'  expand="lg">
                 <Container>
-                    <Navbar.Brand ><img style={{ height: '40px' }} src={logo} />  <span className='text-white'>Mr Chef</span></Navbar.Brand>
+                    <Navbar.Brand ><img style={{ height: '40px' }} src={logo} />  <span className='text-dark'>Mr Chef</span></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             
-                            <Link className='link_style' to="/">Home</Link>
-                            <Link className='link_style' to="/blog">Blog</Link>
+                            <Link className='link text-dark' to="/">Home</Link>
+                            <Link className='link text-dark' to="/blog">Blog</Link>
                             {
                                 user ?
                                     <div>
@@ -40,10 +40,10 @@ const Header = () => {
 
                                         <Link
                                             onClick={handleLogOut}
-                                            className='link_style' >LogOut</Link>
+                                            className='link text-dark' >LogOut</Link>
                                     </div>
                                     :
-                                    <Link className='link_style' to="/login">Login</Link>
+                                    <Link className='link text-dark' to="/login">Login</Link>
                             }
 
                         </Nav>

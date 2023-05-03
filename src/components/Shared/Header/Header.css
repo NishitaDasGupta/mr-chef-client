@@ -1,12 +1,12 @@
 .background_color{
 /* background-color: rgb(82, 158, 6,0.7);
  */
- background-color: #4267B2;
+ background-color: #9bad32;
 }
-.link_style{
+.link{
     text-decoration: none;
     margin-right: 10px;
-    color: white;
+    /* color: white; */
 }
 .profilePicture{
     width: 30px;

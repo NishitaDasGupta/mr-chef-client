@@ -1,5 +1,34 @@
-.chefsdetails{
+.banner {
+    border: 5px solid white;
+    padding: 25px;
+    background-image: url("https://img.freepik.com/free-photo/meatballs-with-vegetables-tomato-sauce_1220-7347.jpg?w=740&t=st=1683138013~exp=1683138613~hmac=5fdb92ecfdd82dd44185ef8a22dd692b1924cf4395e58909594743b3d544ce70");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+
+}
+
+.banner-title {
+text-align: center;
+margin-top: 25px;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+.hello {
+    font-size: 50px;
+    font-weight: 600;
+    color: rgb(43, 25, 1);
+}
+
+.mrChef {
+    font-size: 70px;
+    font-weight: 800;
+    color: rgb(255, 255, 254)
+}
+
+.chefsdetails {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }

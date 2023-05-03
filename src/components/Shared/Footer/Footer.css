@@ -1,3 +1,8 @@
 .footer{
  margin-top: auto;
 }
+.link_style{
+    text-decoration: none;
+    margin-right: 10px;
+    color: white;
+}

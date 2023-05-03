@@ -66,12 +66,12 @@ const Login = () => {
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
 
-                <Button className='w-100 mb-3' variant='primary' type="submit">
+                <Button className='w-100 mb-3' variant='secondary' type="submit">
                     Log in
                 </Button>
                 <div className='d-flex '
                 >
-                    <Button className='w-100 me-3' onClick={handleGoogle} variant='outline-primary' type="submit">
+                    <Button className='w-100 me-3' onClick={handleGoogle} variant='outline-secondary' type="submit">
                         <FaGoogle /> Login with Google
                     </Button>
                     <Button className='w-100'   onClick={handleGithub} variant='outline-secondary' type="submit"><FaGithub /> Login with GitHub

@@ -10,7 +10,7 @@ const ErrorPage = () => {
             <img style={{ width: "100%" }} src={Banner1} alt="" />
             <h1 ><strong>OOPS! PAGE NOT FOUND</strong></h1>
             <p className='text-danger'>Sorry, an unexpected error has occurred. The Page you are looking for is <span >{error.statusText || error.message}</span></p>
-            <Link to='/'><Button variant="primary">Return Home</Button></Link>
+            <Link to='/'><Button variant="outline-warning">Return Home</Button></Link>
         </Container>
     );
 };
