@@ -2,11 +2,13 @@ import React, { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../../../Providers/AuthProviders';
 const Login = () => {
     const { signInUser, googleSignInUser,githubSignInUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const handleLogin = event => {
@@ -14,6 +16,7 @@ const Login = () => {
         const form = event.target;
         const email = event.target.email.value;
         const password = event.target.password.value;
+        const from = location.state?.from?.pathname || "/";
         console.log(email, password);
         signInUser(email, password)
             .then((result) => {
@@ -21,6 +24,7 @@ const Login = () => {
                 setSuccess('Successfully Login!')
                 setError('');
                 form.reset();
+              navigate(from,{replace:true});
             })
             .catch((error) => {
                 setError(error.message);

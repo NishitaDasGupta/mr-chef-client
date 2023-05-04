@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { Button, Container } from 'react-bootstrap';
+import { Link, useLoaderData } from 'react-router-dom';
 import "./ChefSection.css"
 import { AiFillLike } from 'react-icons/ai';
 import RecipesChef from '../RecipesChef/RecipesChef';
@@ -15,7 +15,7 @@ const ChefSection = () => {
                 <Container>
                     <div className='d-lg-flex justify-content-between align-items-center '>
                         <div className="me-sm-auto">
-                            <img className='chef_img' src={Chef_Picture} alt="" />
+                            <img className='chef_img rounded' src={Chef_Picture} alt="" />
                         </div>
                         <div className='p-4'
                         >
@@ -34,13 +34,22 @@ const ChefSection = () => {
             </div>
             {/* recipes of chef  */}
 
-            <div>
-                {
-                    Recipes.map(recipe => <RecipesChef key={recipe.Recipe_ID}
-                        recipe={recipe}
-                    ></RecipesChef>)
-                }
+            <Container>
+                <h2 className='mt-3'
+                >Recipes of mine : </h2>
+                <hr />
+                <div className='chefsdetails'>
+                    {
+                        Recipes.map(recipe => <RecipesChef key={recipe.Recipe_ID}
+                            recipe={recipe}
+                        ></RecipesChef>)
+                    }
                 </div>
+
+                <Link to='/'> <Button className='w-100 mt-3'
+                    variant="secondary">Go Back</Button></Link>
+
+            </Container>
         </div>
     );
 };

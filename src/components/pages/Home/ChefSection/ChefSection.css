@@ -6,14 +6,16 @@
     background-size: cover;
 }
 .chef_img{
-    width: 150px;
-    height: 150px;
+    height:30vh;
     border: 5px solid white;
     border-radius: 50%;
     border-color: white;
 }
 .chef-description{
     text-align: justify;
+}
+.chef-recipes{
+    
 }
 @media screen and (max-width:576px) {
     .chef_img{

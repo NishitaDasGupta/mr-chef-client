@@ -10,7 +10,7 @@ const auth = getAuth(app);
 export const AuthContext = createContext(null);
 const AuthProviders = ({ children }) => {
     const [user, setUser] = useState('');
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
@@ -22,7 +22,6 @@ const AuthProviders = ({ children }) => {
 
     const updateProfileUser = (userCurrent, name, photo) => {
         setLoading(true);
-
         return updateProfile(userCurrent, {
             displayName: name,
             photoURL: photo

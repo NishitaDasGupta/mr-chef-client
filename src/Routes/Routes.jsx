@@ -8,6 +8,7 @@ import Register from "../components/pages/Home/Register/Register";
 import Login from "../components/pages/Home/Login/Login";
 import ErrorPage from "../components/pages/Home/ErrorPage/ErrorPage";
 import ChefSection from "../components/pages/Home/ChefSection/ChefSection";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/chefs/:id",
-                element: <ChefSection></ChefSection>,
+                element: <PrivateRoute><ChefSection></ChefSection></PrivateRoute>,
                 loader: ({params})=> fetch(`https://mr-chef-server-nishitadasgupta.vercel.app/chefs/${params.id}`)
             },
         ]
