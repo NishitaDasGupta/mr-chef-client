@@ -3,10 +3,10 @@
  */
  background-color: #9bad32;
 }
-.link{
+a{
     text-decoration: none;
     margin-right: 10px;
-    /* color: white; */
+    color: black;
 }
 .profilePicture{
     width: 30px;
