@@ -10,7 +10,7 @@ const ChefCard = ({ chef }) => {
   return (
 
     <Card className='p-3 mt-3'>
-      <Card.Img className="chef_img" variant="top" src={Chef_Picture} />
+      <Card.Img className="chef_picture" variant="top" src={Chef_Picture} />
       <Card.Body>
         <Card.Title className='d-flex  justify-content-between align-items-center'>
           <div style={{ fontSize: '1.5em' }} >
@@ -27,7 +27,7 @@ const ChefCard = ({ chef }) => {
         </Card.Text>
       </Card.Body>
       <Card.Footer>
-        <Link ><Button className='w-100'
+        <Link to={`/chefs/${Chef_ID}`}><Button className='w-100'
           variant="warning">View Recipes</Button></Link>
       </Card.Footer>
     </Card>

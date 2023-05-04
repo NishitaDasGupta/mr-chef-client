@@ -1,0 +1,24 @@
+.chef_banner{
+    border: 5px solid white;
+    padding: 25px;
+    background-image: url("https://img.freepik.com/premium-photo/abstract-colorful-oblique-lines-background-colorful-background_613001-1224.jpg?w=740");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.chef_img{
+    width: 150px;
+    height: 150px;
+    border: 5px solid white;
+    border-radius: 50%;
+    border-color: white;
+}
+.chef-description{
+    text-align: justify;
+}
+@media screen and (max-width:576px) {
+    .chef_img{
+        width: 100%;
+      height: 220px;
+      border-radius: 8px;
+    }
+}

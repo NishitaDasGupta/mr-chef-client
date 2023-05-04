@@ -7,6 +7,7 @@ import Blog from "../components/pages/Home/Blog/Blog";
 import Register from "../components/pages/Home/Register/Register";
 import Login from "../components/pages/Home/Login/Login";
 import ErrorPage from "../components/pages/Home/ErrorPage/ErrorPage";
+import ChefSection from "../components/pages/Home/ChefSection/ChefSection";
 
 const router = createBrowserRouter([
     {
@@ -30,7 +31,12 @@ const router = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register></Register>
-            }
+            },
+            {
+                path: "/chefs/:id",
+                element: <ChefSection></ChefSection>,
+                loader: ({params})=> fetch(`https://mr-chef-server-nishitadasgupta.vercel.app/chefs/${params.id}`)
+            },
         ]
     },
   

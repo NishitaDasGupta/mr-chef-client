@@ -1,8 +1,11 @@
 .footer{
- margin-top: auto;
+ padding-top: 30px;
 }
 .link_style{
     text-decoration: none;
     margin-right: 10px;
     color: white;
+}
+.mr-chef-description{
+    text-align: justify;
 }

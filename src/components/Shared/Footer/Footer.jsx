@@ -9,10 +9,10 @@ const Footer = () => {
             <Container className='mt-2'>
                 <Row >
                     <Col sm={3}>
-                        <div>
-                            <h5 >
+                        <div >
+                            <h5 className='text-warning'>
                                 <img style={{ height: '40px' }} src={logo} />  Mr Chef</h5>
-                            <p>Mr Chef is a recipes cook book contains couple of recipe information. It has ingredients, preparation time, cooking time and some other information as well.</p>
+                            < p className='mr-chef-description'><strong >Mr Chef</strong> is a recipes cook book contains couple of recipe information. It has ingredients, preparation time, cooking time and some other information as well.</p>
                         </div>
                     </Col>
                     <Col sm={3}>
