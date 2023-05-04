@@ -1,5 +1,5 @@
 import { Rating } from '@smastrom/react-rating';
-import '@smastrom/react-rating/style.css'
+import '@smastrom/react-rating/style.css';
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import { BiLike } from 'react-icons/bi';
