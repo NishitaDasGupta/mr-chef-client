@@ -21,11 +21,16 @@ const AuthProviders = ({ children }) => {
     }
 
     const updateProfileUser = (userCurrent, name, photo) => {
-        setLoading(true);
-        return updateProfile(userCurrent, {
+        updateProfile(userCurrent, {
             displayName: name,
             photoURL: photo
         })
+            .then(() => {
+                console.log("updated");
+             })
+            .catch((error) => {
+                console.log(error.message)
+            })
     }
     const signOutUser = () => {
         setLoading(true);
@@ -37,15 +42,19 @@ const AuthProviders = ({ children }) => {
     const githubSignInUser = () => {
         return signInWithPopup(auth, githubProvider)
     }
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
             setLoading(false);
+
         })
         return () => {
             unsubscribe();
         }
     }, [])
+
+
     const authinfo = { user, loading, createUser, signInUser, signOutUser, googleSignInUser, githubSignInUser, updateProfileUser };
     return (
         <AuthContext.Provider value={authinfo}>

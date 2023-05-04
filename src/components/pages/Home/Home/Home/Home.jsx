@@ -3,14 +3,16 @@ import CarouselBanner from '../CarouselBanner/CarouselBanner';
 import ChefCard from "../ChefCard/ChefCard";
 import { Button, Container } from 'react-bootstrap';
 import "./Home.css"
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import Recipes from '../Recipes/Recipes';
 import Loader from '../../../../Shared/Loader/Loader';
 const Home = () => {
+    
     const [chefsDetails, setChefsDetails] = useState([]);
+   
     const [showAll, setShowAll] = useState(false);
     const recipes = useLoaderData();
-    console.log(recipes);
+    // console.log(recipes);
     useEffect(() => {
         fetch('https://mr-chef-server-nishitadasgupta.vercel.app/chefs')
             .then(res => res.json())

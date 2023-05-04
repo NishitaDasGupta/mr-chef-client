@@ -21,19 +21,18 @@ const Register = () => {
             setSuccess('');
             return;
         }
-        console.log(name, photo, email, password);
+        // console.log(name, photo, email, password);
         createUser(email, password)
             .then((result) => {
                 const registeredUser = result.user;
-                updateProfileUser(result.user, name, photo)
-                .then(() => { })
-                .catch((error) => {
-                    setError(error.message);
-                })
+                updateProfileUser(result.user, name, photo);
+                console.log(registeredUser);
                 setSuccess('Successfully Registered!');
                 setError('');
                 form.reset();
                 navigate("/");
+            
+                
             })
             .catch((error) => {
                 setError(error.message);
