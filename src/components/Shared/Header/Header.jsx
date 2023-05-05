@@ -29,13 +29,13 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <ActiveRoute to="/">Home</ActiveRoute>
-                            <ActiveRoute className='link-dark' to="/blog">Blog</ActiveRoute>
+                            <ActiveRoute  to="/">Home</ActiveRoute>
+                            <ActiveRoute  to="/blog">Blog</ActiveRoute>
                             {
                                 user ?
                                     <div>
-                                        {user && <img className='profilePicture rounded-circle'
-                                            src={user.photoURL} alt={user.displayName}
+                                        {user.photoURL && <img className='profilePicture rounded-circle'
+                                            src={user.photoURL} 
                                             title={user.displayName} />}
 
                                         <Link
@@ -43,7 +43,7 @@ const Header = () => {
                                             className='link-dark' >LogOut</Link>
                                     </div>
                                     :
-                                    <ActiveRoute className='link-dark' to="/login">Login</ActiveRoute>
+                                    <ActiveRoute  to="/login">Login</ActiveRoute>
                             }
 
                         </Nav>

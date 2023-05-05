@@ -3,10 +3,11 @@ import '@smastrom/react-rating/style.css';
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import { BiLike } from 'react-icons/bi';
+import "./Recipes.css"
 const Recipes = ({ recipe }) => {
     const { Recipe_Name, Recipe_Pic, Recipe_ID, Ratings, Likes } = recipe;
     return (
-        <Card className='p-3 mt-3'>
+        <Card className='p-3 mt-3 chefCard'>
             <Card.Img className="chef_img" variant="top" src={Recipe_Pic} />
             <Card.Body>
                 <Card.Title><strong>{Recipe_Name}</strong></Card.Title>

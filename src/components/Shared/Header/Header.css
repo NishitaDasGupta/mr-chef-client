@@ -4,9 +4,11 @@
  background-color: #9bad32;
 }
 a{
-    text-decoration: none;
+    text-decoration: none !important;
     margin-right: 10px;
-    color: black;
+    color: rgb(248, 246, 246) !important;
+    font-size: 700;
+    font-weight: 800;
 }
 .profilePicture{
     width: 30px;

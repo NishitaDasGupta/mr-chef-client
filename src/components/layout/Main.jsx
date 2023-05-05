@@ -4,6 +4,7 @@ import Header from '../Shared/Header/Header';
 import { Outlet, useNavigation } from 'react-router-dom';
 import "./Main.css"
 import Loader from '../Shared/Loader/Loader';
+
 const Main = () => {
     const navigation = useNavigation();
     console.log(navigation.state);
@@ -12,8 +13,8 @@ const Main = () => {
     }
     return (
         <div className='content-container'>
+            
             <Header></Header>
-
             <Outlet></Outlet>
             <br /><br /><br /><br /><br /><br />
             <Footer></Footer>

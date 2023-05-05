@@ -32,11 +32,14 @@ const Login = () => {
             });
     }
     const handleGoogle = () => {
+        const from = location.state?.from?.pathname || "/";
+        console.log(from);
         googleSignInUser()
             .then((result) => {
                 const googleUser = result.user;
                 setSuccess('Successfully Login with Google!')
                 setError('');
+                navigate(from,{replace:true});
             })
             .catch((error) => {
                 setError(error.message);
@@ -44,11 +47,14 @@ const Login = () => {
             })
     }
     const handleGithub = () => {
+        const from = location.state?.from?.pathname || "/";
+        console.log(from);
         githubSignInUser()
             .then((result) => {
                 const githubUser = result.user;
                 setSuccess('Successfully Login with Github!')
                 setError('');
+                navigate(from,{replace:true});
             })
             .catch((error) => {
                 setError(error.message);
@@ -57,7 +63,7 @@ const Login = () => {
     }
     return (
 
-        <Container className='w-50 mt-4 mb-5' >
+        <Container className='w-75 mt-4 mb-5' >
             <h1 className=''>Please Login</h1>
             <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -88,7 +94,7 @@ const Login = () => {
                     {success}  <br />
                 </Form.Text>
                 <Form.Text>
-                    Dont have an account? <Link to="/register">Register</Link>
+                  <Link to="/register">Don't have an account? Register</Link>
                 </Form.Text>
             </Form>
         </Container>

@@ -4,3 +4,13 @@
     border-radius: 50%;
     border-color: white;
 }
+.chefCard
+{
+    margin: 20px;
+    transition: 1s;
+}
+.chefCard:hover {
+   
+        box-shadow: 0 0 10px rgb(146, 146, 8), 0 0 40px rgb(87, 87, 2);
+    transform: scale(1.2);
+}

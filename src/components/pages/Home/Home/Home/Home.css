@@ -18,19 +18,21 @@
 .hello {
     font-size: 50px;
     font-weight: 600;
-    color: rgb(43, 25, 1);
+
+    color: rgb(34, 20, 1);
 }
 
 .mrChef {
     font-size: 70px;
     font-weight: 800;
-    color: rgb(255, 255, 254)
+    color: rgb(255, 255, 254);
 }
 
 .chefsdetails {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+  
 }
 
 

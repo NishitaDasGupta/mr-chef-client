@@ -4,6 +4,8 @@ import { Link, useLoaderData } from 'react-router-dom';
 import "./ChefSection.css"
 import { AiFillLike } from 'react-icons/ai';
 import RecipesChef from '../RecipesChef/RecipesChef';
+import LazyLoad from 'react-lazy-load';
+
 const ChefSection = () => {
     const chefDetails = useLoaderData();
     const { Chef_Picture, Chef_Name, Chef_Description, Chef_ID, Years_of_Experience, Number_of_Recipes, Likes, Recipes
@@ -11,11 +13,16 @@ const ChefSection = () => {
     return (
         <div>
             {/* chef banner  */}
+
+
             <div className='chef_banner'>
                 <Container>
                     <div className='d-lg-flex justify-content-between align-items-center '>
                         <div className="me-sm-auto">
-                            <img className='chef_img rounded' src={Chef_Picture} alt="" />
+                            <LazyLoad height={200}>
+                                <img className='chef_img rounded' src={Chef_Picture} alt="" />
+
+                            </LazyLoad>
                         </div>
                         <div className='p-4'
                         >
@@ -32,6 +39,8 @@ const ChefSection = () => {
                     </div>
                 </Container>
             </div>
+
+
             {/* recipes of chef  */}
 
             <Container>

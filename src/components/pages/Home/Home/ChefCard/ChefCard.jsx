@@ -10,6 +10,7 @@ const ChefCard = ({ chef }) => {
   return (
 
     <Card className='p-3 mt-3'>
+      
       <Card.Img className="chef_picture" variant="top" src={Chef_Picture} />
       <Card.Body>
         <Card.Title className='d-flex  justify-content-between align-items-center'>

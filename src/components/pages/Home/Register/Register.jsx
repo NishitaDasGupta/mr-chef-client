@@ -42,7 +42,7 @@ const Register = () => {
 
     }
     return (
-        <Container className='w-50 mt-4 mb-5' >
+        <Container className='w-75 mt-4 mb-5' >
             <h1 className=''>Please Register</h1>
             <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" >
@@ -72,7 +72,7 @@ const Register = () => {
                     {success} <br />
                 </Form.Text>
                 <Form.Text>
-                    Already have an account? Please <Link to="/login">Log in</Link>
+                   <Link to="/login"> Already have an account? Please Log in!</Link>
                 </Form.Text>
             </Form>
         </Container>
