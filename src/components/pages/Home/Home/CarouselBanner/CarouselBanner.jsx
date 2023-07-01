@@ -4,7 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 const CarouselBanner = () => {
     return (
         <div>
-            <Carousel fade>
+            <Carousel fade className='image-container'>
                 <Carousel.Item>
                     <img
                         className="d-block w-100 mx-auto"

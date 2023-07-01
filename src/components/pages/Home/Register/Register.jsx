@@ -21,7 +21,7 @@ const Register = () => {
             setSuccess('');
             return;
         }
-        // console.log(name, photo, email, password);
+  
         createUser(email, password)
             .then((result) => {
                 const registeredUser = result.user;

@@ -4,7 +4,7 @@ import Header from '../Shared/Header/Header';
 import { Outlet, useNavigation } from 'react-router-dom';
 import "./Main.css"
 import Loader from '../Shared/Loader/Loader';
-
+import { ScrollRestoration } from "react-router-dom";
 const Main = () => {
     const navigation = useNavigation();
     console.log(navigation.state);
@@ -18,6 +18,7 @@ const Main = () => {
             <Outlet></Outlet>
             <br /><br /><br /><br /><br /><br />
             <Footer></Footer>
+            <ScrollRestoration />
         </div>
     );
 };

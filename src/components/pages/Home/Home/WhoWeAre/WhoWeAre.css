@@ -1,0 +1,20 @@
+.image-container {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+.who-we-are{
+  display: flex;
+  align-items: center;
+  justify-content:center ;
+}
+@media screen and (max-width:576px) {
+  .who-we-are{
+     display: block;
+    
+  }
+}
+@media screen and (min-width:577px) and (max-width:992px) {
+  .who-we-are{
+    display: block;
+   
+ }
+}

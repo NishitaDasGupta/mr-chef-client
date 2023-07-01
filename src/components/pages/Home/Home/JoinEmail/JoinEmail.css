@@ -1,0 +1,21 @@
+.input-container {
+    position: relative;
+  }
+  
+  .input-field {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 8px;
+    width: 200px;
+  }
+  
+  .send-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #f3b807;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  }

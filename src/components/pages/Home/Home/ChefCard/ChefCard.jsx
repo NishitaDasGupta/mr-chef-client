@@ -9,9 +9,9 @@ const ChefCard = ({ chef }) => {
   } = chef;
   return (
 
-    <Card className='p-3 mt-3'>
+    <Card className='p-3 mt-3 image-container'>
       
-      <Card.Img className="chef_picture" variant="top" src={Chef_Picture} />
+      <Card.Img className="chef_picture " variant="top" src={Chef_Picture} />
       <Card.Body>
         <Card.Title className='d-flex  justify-content-between align-items-center'>
           <div style={{ fontSize: '1.5em' }} >
